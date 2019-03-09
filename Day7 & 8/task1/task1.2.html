@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左侧固定，右侧自适应</title>
+    <style>
+        * {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Flex-box实现 */
+        /* body {
+            display: flex;
+        }
+
+        .left {
+            width: 400px;
+            background-color: bisque;
+        }
+
+        .right {
+            flex-grow: initial;
+            background-color: azure;
+        } */
+
+        /* Float实现 */
+        /* .left {
+            float: left;
+            width: 400px;
+            background-color: bisque;
+        }
+
+        .right {
+            float: left;
+            width: 100%;
+            background-color: azure;
+        } */
+
+        /* Position实现 */
+        .left {
+            width: 400px;
+            background-color: bisque;
+        }
+
+        .right {
+            position: relative;
+            left: 400px;
+            width: 100%;
+            background-color: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+</body>
+
+</html>
