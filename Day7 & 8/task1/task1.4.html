@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三栏布局，左右固定，中间自适应</title>
+    <style>
+        * {
+            height: 100%;
+            margin: 0;
+        }
+
+        .left {
+            background-color: blueviolet;
+        }
+
+        .right {
+            background-color: bisque;
+        }
+
+        .middle {
+            background-color: aqua;
+        }
+
+        /* Flex-box实现 (其实是有问题的...)*/
+        /* body {
+            display: flex;
+        }
+
+        .left {
+            flex: 200px;
+            order: 0;
+        }
+
+        .right {
+            flex: 200px;
+            order: 2;
+        }
+
+        .middle {
+            width: 100%;
+            order: 1; 
+        } */
+
+        /* Float实现 (假圣杯布局)*/
+        /* .left {
+            float: left;
+            width: 200px;
+            margin-left: -100%;
+        }
+
+        .middle {
+            float: left;
+            width: 100%;
+        }
+
+        .right {
+            float: right;
+            width: 200px;
+            margin-left: -100%;
+        } */
+
+        /* Position实现 */
+        .left {
+            position: absolute;
+            width: 200px;
+            top: 0;
+            left: 0;
+        }
+
+        .middle {
+            left: 200px;
+            width: 100%;
+        }
+
+        .right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 这里将middle放在前面，确保中间内容最先渲染 -->
+    <div class="middle"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+</body>
+
+</html>
