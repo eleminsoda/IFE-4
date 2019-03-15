@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p id="time1"></p>
+    <p id="time2"></p>
+</body>
+
+</html>
+<script>
+    function generateDate() {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = format(date.getMonth());
+        let day = format(date.getDate());
+        let dayOfWeekCn = getDayOfWeek_cn(date.getDay());
+        let dayOfWeekEn = getDayOfWeek_en(date.getDay());
+        let hour = format(date.getHours());
+        let minute = format(date.getMinutes());
+        let second = format(date.getSeconds());
+
+        let str = "今天是" + year + "年" + month + "月" + day + "日，" + dayOfWeekCn + "，" + hour + ":" + minute + ":" + second;
+        let str1 = "Today is " + year + "-" + month + "-" + day + ", " + dayOfWeekEn + ", " + hour + ":" + minute + ":" + second;
+        return { str, str1 };
+    }
+
+    function format(a) {
+        return a < 10 ? '0' + a : a
+    }
+
+    function getDayOfWeek_cn(a) {
+        let days = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        return days[a];
+    }
+
+    function getDayOfWeek_en(a) {
+        let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        return days[a];
+    }
+    setInterval(() => {
+        let { str, str1 } = generateDate();
+        document.getElementById("time1").innerText = str;
+        document.getElementById("time2").innerText = str1;
+    }, 1000);
+</script>
